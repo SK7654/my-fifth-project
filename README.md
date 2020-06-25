@@ -225,7 +225,50 @@ We have mounted the /var/lib/grafana/ directory in the local system to the /mnt/
 Now create the Deployment.
 
 ***2] Deployment:***
+```javascript
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graf-dep
 
+
+spec:
+  selector:
+    matchLabels:
+      app: grafana
+
+
+  template:
+    metadata:
+      name: graf-dep
+      labels:
+        app: grafana
+    
+    spec:
+      volumes:
+        - name: graf-storage
+          persistentVolumeClaim:
+            claimName: graf-pv-claim
+
+      containers:
+        - name: graf-os
+          image: dockerninad07/grafana:v1
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: "/var/lib/grafana"
+              name: graf-storage
+
+      restartPolicy: Always 
+```
+***Note: Do not create Replicas for Grafana. It throws an Authority error while trying to login.***
+
+Start the deployment and expose it:
+```javascript
+kubectl create -f graf_dep.yml
+
+kubectl expose deployment graf-dep --port=3000 --type=NodePort
+```
+We can see that the containers have been deployed:
       
 
 
