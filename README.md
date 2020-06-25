@@ -220,6 +220,12 @@ kubectl create -f graf_pv.yml
 ```
 ![0](https://user-images.githubusercontent.com/64473684/85677152-e80a2880-b6e4-11ea-9b8f-177ad64a8ffa.jpg)
 
+We have mounted the /var/lib/grafana/ directory in the local system to the /mnt/sda1/data/grafana/ directory in the Kubernetes Node, thereby making it persistent.
+
+Now create the Deployment.
+
+***2] Deployment:***
+
       
 
 
