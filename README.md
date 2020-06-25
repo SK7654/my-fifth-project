@@ -278,6 +278,10 @@ As we now have our Deployments, we are ready to integrate both the tools
 **Monitoring:**
 Use the IP address of the Kubernetes Node along with the Port number generated for the Prometheus Deployment
 
+![0](https://user-images.githubusercontent.com/64473684/85680276-c65e7080-b6e7-11ea-8772-6d3f413a5a8d.jpg)
+
+Similarly use the same IP with the port number for **Grafana** Deployment
+
 
 
 
