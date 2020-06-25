@@ -133,7 +133,7 @@ kubectl create -f prom_dep.yml
 ```
 After creating the deployment, we need to expose it to the outside world. Use the following command to expose:
 ```javascript
-kubectl expose deployment prom-dep --port=9090 --type=NodePort
+kubectl expose deployment prom-dep --port=8080 --type=NodePort
 ```
 We now have our Deployment exposed. We need to do the same in case of Grafana container.
 
@@ -187,7 +187,13 @@ spec:
   hostPath:
     path: "/mnt/sda1/data/grafana"
    ```
-   
+
+Create the volume:
+```javascript
+
+kubectl create -f graf_pv.yml
+```
+
    
 
     
