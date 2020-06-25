@@ -167,6 +167,29 @@ docker push dockerninad07/grafana:v1
 ```
 ***2] PersistentVolume:***
 
+```javascript
+
+apiVersion: v1
+
+kind: PersistentVolume
+
+metadata:
+  name: graf-pv
+  labels:
+    type: local
+
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/sda1/data/grafana"
+   ```
+   
+   
+
     
 
 
