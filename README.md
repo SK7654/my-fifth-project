@@ -196,6 +196,7 @@ kubectl create -f graf_pv.yml
 ![0](https://user-images.githubusercontent.com/64473684/85675877-b80e5580-b6e3-11ea-9577-69374bd62cf5.jpg)
 
 ***3] PersistentVolumeClaim:***
+
 ```javascript
 
 apiVersion: v1
@@ -212,12 +213,12 @@ spec:
   resources:
     requests:
       storage: 3Gi
-
 ```
-      
-      
-      
-      
+Create the volume:
+```javascript
+kubectl create -f graf_pv.yml
+```
+
       
 
 
