@@ -123,13 +123,9 @@ spec:
           volumeMounts:
             - mountPath: "/prom_data"
               name: prom-storage
+       
 ```
 
-
-       **  Note: Make sure to push the created containers to your DockerHub repository so that the Node can pull the image at the time of Deployment.**
-
-We mount the prom_data directory in our local system to the /mnt/sda1/data/prometheus directory in the Kubernetes Node to make it Persistent. Now create the deployment.     
-      
               
               
   
