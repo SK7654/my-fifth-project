@@ -270,7 +270,8 @@ kubectl expose deployment graf-dep --port=3000 --type=NodePort
 ```
 We can see that the containers have been deployed:
       
-![0](https://user-images.githubusercontent.com/64473684/85678138-d1b09c80-b6e5-11ea-86ae-27a147ee795b.jpg)
+![6498d99a-84cc-46eb-b155-9f6ec37dd165](https://user-images.githubusercontent.com/64473684/85683515-ecd1db00-b6ea-11ea-95ca-0db00dbaabe4.jpg)
+
 As we now have our Deployments, we are ready to integrate both the tools
 
 
@@ -281,6 +282,13 @@ Use the IP address of the Kubernetes Node along with the Port number generated f
 ![0](https://user-images.githubusercontent.com/64473684/85680276-c65e7080-b6e7-11ea-8772-6d3f413a5a8d.jpg)
 
 Similarly use the same IP with the port number for **Grafana** Deployment
+
+
+![0](https://user-images.githubusercontent.com/64473684/85683544-f3f8e900-b6ea-11ea-9c7f-ee1a4a4f4cc1.jpg)
+
+![0 (1)](https://user-images.githubusercontent.com/64473684/85683560-f8250680-b6ea-11ea-9cc8-761b6e9c5d09.jpg)
+
+We have both the tools ready for monitoring. We can can now view the real-time Metrics data by using PromQL inside the Prometheus UI and create dashboards and panels to view corresponding real-time visuals of the data through Grafana. We also have Persistent storage both for Prometheus and Grafana so that even if the Pods crash due to some reason, they will automatically retrieve the lost data.
 
 
 
