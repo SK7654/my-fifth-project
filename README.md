@@ -137,6 +137,38 @@ kubectl expose deployment prom-dep --port=9090 --type=NodePort
 ```
 We now have our Deployment exposed. We need to do the same in case of Grafana container.
 
+***Grafana**
+![0](https://user-images.githubusercontent.com/64473684/85674602-9b255280-b6e2-11ea-9c31-fdc8835eed49.jpg)
+
+***1] Dockerfile:***
+```javascript
+FROM centos
+
+
+RUN yum install wget -y
+
+RUN wget https://dl.grafana.com/oss/release/grafana-7.0.3-1.x86_64.rpm
+
+RUN yum install grafana-7.0.3-1.x86_64.rpm -y
+
+
+WORKDIR /usr/share/grafana
+
+
+CMD /usr/sbin/grafana-server start && /usr/sbin/grafana-server enable && /bin/bash
+```
+
+Build the image and push it to the DockerHub repository:
+
+```javascript
+docker build -t dockerninad07/grafana:v1 .
+
+docker push dockerninad07/grafana:v1
+```
+***2] PersistentVolume:***
+
+    
+
 
   
 
