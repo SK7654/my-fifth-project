@@ -270,6 +270,14 @@ kubectl expose deployment graf-dep --port=3000 --type=NodePort
 ```
 We can see that the containers have been deployed:
       
+![0](https://user-images.githubusercontent.com/64473684/85678138-d1b09c80-b6e5-11ea-86ae-27a147ee795b.jpg)
+As we now have our Deployments, we are ready to integrate both the tools
+
+
+
+**Monitoring:**
+Use the IP address of the Kubernetes Node along with the Port number generated for the Prometheus Deployment
+
 
 
 
