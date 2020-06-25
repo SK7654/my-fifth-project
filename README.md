@@ -87,7 +87,9 @@ kubectl create -f prom_pv_claim.yml
  ![0](https://user-images.githubusercontent.com/64473684/85672494-952e7200-b6e0-11ea-8595-e6b0982b6cb5.jpg)
 
 Let us now create the required Deployment for Prometheus Container
+
 **4] Deployment:**
+```javascript
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -107,7 +109,7 @@ spec:
       labels:
         app: prometheus
 
-```javascript
+
     spec:
       volumes:
         - name: prom-storage
@@ -121,8 +123,10 @@ spec:
           volumeMounts:
             - mountPath: "/prom_data"
               name: prom-storage
+```
+
               
-              ```
+      
               
               
   
