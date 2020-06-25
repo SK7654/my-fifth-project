@@ -83,6 +83,52 @@ Create the Claim:
 kubectl create -f prom_pv_claim.yml
 ```
 ﻿We can see that the Volume bounds with the claim
+ 
+ ![0](https://user-images.githubusercontent.com/64473684/85672494-952e7200-b6e0-11ea-8595-e6b0982b6cb5.jpg)
+
+Let us now create the required Deployment for Prometheus Container
+**4] Deployment:**
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prom-dep
+
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prometheus
+
+
+  template:
+    metadata:
+      name: prom-dep
+      labels:
+        app: prometheus
+
+```javascript
+    spec:
+      volumes:
+        - name: prom-storage
+          persistentVolumeClaim:
+            claimName: prom-pv-claim
+        
+      containers:
+        - name: prom-os
+          image: dockerninad07/prometheus:v1
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: "/prom_data"
+              name: prom-storage
+              
+              ```
+              
+              
+  
+
+
+
 
 
 
