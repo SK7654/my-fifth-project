@@ -57,7 +57,32 @@ Create the volume from the command:
 ```javascript
 kubectl create -f prom_pv.yml
 ```
+![0](https://user-images.githubusercontent.com/64473684/85672116-2ea95400-b6e0-11ea-88a8-e924324d5557.jpg)
 
+**3] PersistentVolumeClaim:**
+```javascript
+apiVersion: v1
+
+kind: PersistentVolumeClaim
+
+metadata:
+  name: prom-pv-claim
+
+spec:
+  storageClassName: manual
+  accessModes: 
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+
+```
+Create the Claim:
+
+```javascript
+kubectl create -f prom_pv_claim.yml
+```
+﻿We can see that the Volume bounds with the claim
 
 
 
