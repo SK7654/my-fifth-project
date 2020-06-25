@@ -218,6 +218,7 @@ Create the volume:
 ```javascript
 kubectl create -f graf_pv.yml
 ```
+![0](https://user-images.githubusercontent.com/64473684/85677152-e80a2880-b6e4-11ea-9b8f-177ad64a8ffa.jpg)
 
       
 
